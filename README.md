@@ -1,3 +1,13 @@
 # WorkshopMutationTesting
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.4.
+Example 1
+
+```
+npm run test:mutation -- -m src/app/pipes/is-old-enough/is-old-enough.pipe.ts --logLevel debug
+```
+
+Example 2
+
+```
+npm run test:mutation -- -m src/app/pipes/is-old-enough-simple/is-old-enough-simple.pipe.ts --logLevel debug
+```

@@ -1,0 +1,128 @@
+$v2-gray3: #f3f4f7;
+$v2-gray4: #e5e7ef;
+$v2-gray7: #69748a;
+$v2-gray9: #2a2f3c;
+$v2-gray10: #1d212a;
+$v2-text-muted: $v2-gray7;
+$v2-border-color: $v2-gray4;
+$v2-text-color: $v2-gray10;
+$border-radius-base: 4px;
+$animation: 250ms;
+$v2-nav-bg: $v2-gray3;
+
+.sidebar-box {
+  min-width: 205px;
+  max-width: 475px;
+  padding: 0;
+  flex: 0 0 205px;
+  background-color: white;
+  position: sticky;
+  z-index: 99;
+  top: 0;
+  height: 100vh;
+  border-right: 1px solid $v2-border-color;
+
+  .collapsible-content {
+    display: block;
+    overflow-y: auto;
+    overflow-x: auto;
+    max-height: 100vh;
+    padding: 25px 16px;
+
+    // @include styleScrollbar();
+  }
+
+  &.is-collapsed {
+    z-index: 100;
+    min-width: 0;
+    max-width: 0;
+    padding: 0;
+    border-right: none;
+
+    .collapsible-content {
+      display: none;
+    }
+
+    .resizable-handle-right {
+      display: none;
+    }
+  }
+
+  label {
+    font-size: 10px;
+    line-height: 26px;
+    color: $v2-text-muted;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0 8px;
+  }
+
+  hr {
+    margin: 8px 0;
+  }
+
+  li {
+    margin-bottom: 1px;
+    line-height: 30px;
+
+    a {
+      display: block;
+      padding: 0 8px;
+      color: $v2-text-color;
+      border-radius: $border-radius-base;
+
+      &.is-active {
+        font-weight: bold;
+        background: $v2-nav-bg;
+      }
+
+      &:hover {
+        background: $v2-nav-bg;
+        text-decoration: none;
+      }
+
+      i {
+        transition: transform $animation;
+      }
+    }
+
+    &.is-open {
+      & > a {
+        font-weight: bold;
+
+        i {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+
+  .dropdown-content {
+    padding-left: 10px;
+
+    &.collapsed-menu {
+      display: none;
+    }
+  }
+
+  .button-collapse {
+    position: absolute;
+    top: 28px;
+    right: -12px;
+    z-index: 100;
+    width: 24px;
+    height: 24px;
+    padding: 1px;
+    border: 1px solid $v2-gray4;
+    border-radius: 50%;
+    background: white;
+
+    &:hover {
+      background: $v2-gray4;
+    }
+
+    .button-collapse-icon {
+      color: $v2-gray9;
+    }
+  }
+}

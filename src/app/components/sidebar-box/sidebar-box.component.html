@@ -1,0 +1,12 @@
+<div class="sidebar-box" [class.is-collapsed]="sidebarCollapsed">
+  <a
+    [@collapseExpandBtn]="sidebarCollapsed ? 'collapsed' : 'expanded'"
+    class="button button-icon button-collapse"
+    (click)="toggleSidebar()"
+  >
+    <i class="icon-font-expand button-collapse-icon"></i>
+  </a>
+  <div class="collapsible-content">
+    <ng-content></ng-content>
+  </div>
+</div>
