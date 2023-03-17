@@ -14,7 +14,7 @@ describe('isOldEnoughPipe', () => {
   it('should return true when old person is old enough', () => {
     const isOldEnough = pipe.transform({
       name: 'Old John',
-      yearOfBirth: new Date().getFullYear() - 70, // ⚠️
+      yearOfBirth: new Date().getFullYear() - 80, // ⚠️
     });
     expect(isOldEnough).toBeTruthy();
   });

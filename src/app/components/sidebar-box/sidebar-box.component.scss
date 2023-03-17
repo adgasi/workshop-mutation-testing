@@ -19,7 +19,7 @@ $v2-nav-bg: $v2-gray3;
   position: sticky;
   z-index: 99;
   top: 0;
-  height: 100vh;
+  height: 20vh;
   border-right: 1px solid $v2-border-color;
 
   .collapsible-content {
@@ -70,6 +70,7 @@ $v2-nav-bg: $v2-gray3;
       padding: 0 8px;
       color: $v2-text-color;
       border-radius: $border-radius-base;
+      background: $v2-nav-bg;
 
       &.is-active {
         font-weight: bold;
@@ -106,6 +107,7 @@ $v2-nav-bg: $v2-gray3;
   }
 
   .button-collapse {
+    cursor: pointer;
     position: absolute;
     top: 28px;
     right: -12px;

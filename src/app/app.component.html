@@ -1,6 +1,78 @@
 <section class="main">
+  <h3>Sidebar</h3>
   <sidebar-box>
     <div>Element 1</div>
     <div>Element 2</div>
   </sidebar-box>
+
+  <hr />
+  <div>
+    <h3>Is an adult verification</h3>
+
+    <div>
+      <label>
+        Name:
+        <input type="text" [(ngModel)]="user1.name" />
+      </label>
+    </div>
+
+    <div>
+      <label>
+        Age:
+        <input type="number" [(ngModel)]="user1.age" />
+      </label>
+    </div>
+    <div>
+      <button
+        type="button"
+        [disabled]="!(!!user1.name && !!user1.age)"
+        (click)="isOldEnoughSimple()"
+      >
+        Verify me
+      </button>
+    </div>
+    <div *ngIf="showIsOldEnoughSimpleResult">
+      <span *ngIf="user1 | isOldEnoughSimple"> Welcome {{ user1.name }}! </span>
+      <span *ngIf="!(user1 | isOldEnoughSimple)">
+        {{ user1.name }} you are not old enough!
+      </span>
+    </div>
+  </div>
+
+  <hr />
+
+  <div>
+    <h3>PZU insurance</h3>
+
+    <div>
+      <label>
+        Name:
+        <input type="text" [(ngModel)]="user2.name" />
+      </label>
+    </div>
+
+    <div>
+      <label>
+        Year of birth:
+        <input type="number" [(ngModel)]="user2.yearOfBirth" />
+      </label>
+    </div>
+    <div>
+      <button
+        type="button"
+        [disabled]="!(!!user2.yearOfBirth && !!user2.yearOfBirth)"
+        (click)="isOldEnoughPZU()"
+      >
+        Verify me
+      </button>
+    </div>
+    <div *ngIf="showResultPZU">
+      <span *ngIf="user2 | isOldEnough">
+        All good, proceed to payment {{ user2.name }}!
+      </span>
+      <span *ngIf="!(user2 | isOldEnough)">
+        {{ user2.name }} you are not eligible for the insurance!
+      </span>
+    </div>
+  </div>
 </section>

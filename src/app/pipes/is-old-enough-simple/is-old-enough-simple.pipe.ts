@@ -5,6 +5,6 @@ import { Pipe } from '@angular/core';
 })
 export class IsOldEnoughSimplePipe {
   transform(user: { name: string; age: number }) {
-    return user.age >= 18;
+    return user.age >= 15;
   }
 }

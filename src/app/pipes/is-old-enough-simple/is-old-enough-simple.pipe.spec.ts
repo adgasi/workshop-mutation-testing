@@ -3,8 +3,13 @@ import { IsOldEnoughSimplePipe } from './is-old-enough-simple.pipe';
 describe('isOldEnoughSimplePipe', () => {
   const pipe = new IsOldEnoughSimplePipe();
 
-  it('should return when person is old enough', () => {
+  it('should return true when person is old enough', () => {
     const isOldEnough = pipe.transform({ name: 'John', age: 19 });
+    expect(isOldEnough).toBeTruthy();
+  });
+
+  it('should return true when person is old enough', () => {
+    const isOldEnough = pipe.transform({ name: 'John', age: 18 });
     expect(isOldEnough).toBeTruthy();
   });
 
